@@ -1,0 +1,39 @@
+@import '../common/colors';
+@import '../common/typography';
+@import '../common/layout';
+
+
+.column {
+  @apply --column;
+  padding: 0;
+}
+
+.menu {
+  @apply --menu;
+}
+
+.is-3 {
+  @apply --is-3;
+}
+
+.item {
+  display: block;
+  text-decoration: none;
+  padding: 16px 32px;
+  color: var(--colorWhite);
+  border-bottom: 2px var(--colorWhite) solid;
+  & div {
+    color: var(--colorRed);
+  }
+  &:hover {
+    color: var(--colorRed);
+  }
+}
+
+.logo {
+  font-size: var(--fontHuge);
+}
+
+.active {
+  color: var(--colorDodgerBlue);
+}

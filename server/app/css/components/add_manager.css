@@ -1,0 +1,18 @@
+@import '../settings';
+@import '../common/typography';
+@import '../common/layout';
+@import '../common/input';
+
+.input {
+  @apply --input;
+  margin: 5px 0;
+}
+
+.admin_tabs:hover {
+  border: 3px solid red;
+}
+
+.control {
+  margin: 5px 0;
+}
+

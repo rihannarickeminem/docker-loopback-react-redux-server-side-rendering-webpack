@@ -1,0 +1,15 @@
+@import 'typography';
+@import 'colors';
+
+:root {
+
+  --button {
+    composes: button from 'bulma/css/bulma.css';
+    width: 100%;
+  }
+
+  --greenButton {
+    @apply --button;
+    composes: is-primary from 'bulma/css/bulma.css';
+  }
+}

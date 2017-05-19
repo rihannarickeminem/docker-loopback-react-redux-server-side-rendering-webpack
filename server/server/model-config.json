@@ -1,0 +1,62 @@
+{
+  "_meta": {
+    "sources": [
+      "../common/models",
+      "./models",
+      "loopback/common/models",
+            "loopback-component-passport/lib/models",
+      "loopback/server/models",
+      "../node_modules/loopback-component-passport/lib/models"
+    ],
+        "mixins": [
+            "loopback/common/mixins",
+            "loopback/server/mixins",
+            "../common/mixins",
+            "./mixins"
+        ]
+  },
+  "user": {
+    "dataSource": "PostgreSQL",
+    "public": true
+  },
+  "accessToken": {
+    "dataSource": "PostgreSQL",
+    "public": false
+  },
+  "userCredential": {
+    "dataSource": "PostgreSQL",
+    "public": false
+  },
+  "userIdentity": {
+    "dataSource": "PostgreSQL",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "PostgreSQL",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "PostgreSQL",
+    "public": false
+  },
+  "Role": {
+    "dataSource": "PostgreSQL",
+    "public": false
+  },
+  "kid": {
+    "dataSource": "PostgreSQL",
+    "public": true
+  },
+  "visit": {
+    "dataSource": "PostgreSQL",
+    "public": true
+  },
+  "room": {
+    "dataSource": "PostgreSQL",
+    "public": true
+  },
+  "session": {
+    "dataSource": "PostgreSQL",
+    "public": false
+  }
+}

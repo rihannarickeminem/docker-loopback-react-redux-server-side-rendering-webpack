@@ -1,0 +1,97 @@
+Создать апи сервер
+Список задач по проекту:
+- auth(signup/login)                    +
+- create admin                          * сейчас админ создается в development
+- common:
+  - upload image                        -
+  - include linters                     +
+- managers:
+  - create                              +  notest    
+  - update                              +  notest
+  - get                                 -+
+  - get all                             -+
+  - delete                              -+
+- parents(clients):
+  - create                              +
+  - update                              +
+  - get                                 +
+  - get all                             +
+  - search                              +
+  - delete                              +
+- kids:
+  - add kids                            +
+  - search kids                         +
+  - search by parent                    +
+  - get kids                            +
+  - update                              +
+  - get kids                            +
+  - delete                              + notest
+- visits:
+  - start                               +
+  - end(autocalculate price, and response should contain total_price and current_price они могут различаться если к примеру был выбран сертификат)                               +-
+  - delete                                ++                                                  ++                                                  +                                                  +
+- statistics by visits:
+  - by date range                                           +
+  - get visits for selected parent's kids
+  - get visits for selected kids
+  ? more other data
+- events(акции от самого заведения):                        -
+  - get all                                                 -
+  - get one                                                 -
+  - create                                                  -
+  - update                                                  -
+- settings:
+  - set hour price                                          -
+? day of birthday(closed or open)                           -
+? сертификаты
+? payments
+
+? rooms                                 +
+
+
+Вопросы:
+1) Если добавляют посещение ребенка в то время когда шла акция, должно ли автоматом указываться в посещении, что ребенок пришел на акцию и соответственно сумму за посещение? или манагер будет ручками выбирать по приходу ребенка что тот пришел на акцию?
+2) в догонку вопрос, будет ли автоматом расчитываться конечная стоимость посещения, или манагеры будут лишь стартовать посещение и оканчивать, а сумму им будет рассчитывать автоматом изходя из настроек у админа?
+3) вопрос по сертификатам, как они будут интегрироваться в общую выручку, но я думаю это можно и позже выведать
+4) правда ли будет возможность иметь несколько детских комнат? и тогда вопрос, будет ли имеющийся функционал завязываться на комнату? я имею ввиду что манагеры будут привязаны к комнатам и в посещении будут указывать комнату и цены с акциями будут для разных комнат отдельно устанавливаться?
+
+
+5) манагер может быть родителем? администратор может быть родителем?
+
+Ответы:
+1,2) у манагера будет возможность выбрать акцию или сертификат для посетителя, и тогда сумма пересчитается в соответствии с этими данными
+
+
+test acl, upload 
+
+test-acl create-manager                                                                        0.15-0.30 min  +
+test-acl create-user                                                                           0.15-0.30 min  +
+test-acl update-manager                                                                        0.15-0.30 min  +
+test-acl update-user                                                                           0.15-0.30 min  +
+test-acl get-user                                                                              0.15-0.30 min  +
+test-acl get all user                                                                          0.15-0.30 min  +
+test-acl search  user                                                                          0.15-0.30 min  -
+test-acl delete  user                                                                          0.15-0.30 min  +
+test-acl get-manager                                                                           0.15-0.30 min  +
+test-acl get all manager                                                                       0.15-0.30 min  -
+test-acl search  manager                                                                       0.15-0.30 min  -
+test-acl delete  manager                                                                       0.15-0.30 min  +-
+test-acl visits start                                                                          0.15-0.30 min  +
+test-acl visits delete                                                                         0.15-0.30 min  +
+test-acl visits end                                                                            0.15-0.30 min  +
+test-acl statistics by visits by date range                                                    0.15-0.30 min  -                       
+test-acl get visits for selected parent's kids                                                 0.15-0.30 min  -
+test-acl get visits for selected kids                                                          0.15-0.30 min  +
+модель настроек payment_setting, тут хранится price                                            3-6 hours
+events model, get all, get one, create, update, ACLs                                           3-6 hours
+payment model, get all, get one, create, update, ACLs                                          3-6 hours
+visit end ( с добавлением payment,  и учитыванием payment_price- autocalculate price)          2-5 hours
+upload images, acl отдает имя картинки tests+ acl-tests                                        3-6 hours
+upload delete, acl отдает имя картинки tests+ acl-tests                                        2-5 hours
+
+
+
+нет разделения среди обычных пользователей и манагеров в удалении и апдейте, манагер может удалить и пользователя и манагера,
+(обычный пользователь не может удалять)
+
+может ли манагер получать список манагеров?  и может ли манагер удалять или править манагеров?

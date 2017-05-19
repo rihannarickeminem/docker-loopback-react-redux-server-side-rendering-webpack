@@ -1,0 +1,26 @@
+version: '2'
+services:
+  poostgresql_dbdata:
+    build: ./../../../provision/data
+    volumes:
+      - /data
+  pg:
+    image: postgres
+    volumes:
+      - ./../../../provision/postgresql/:/docker-entrypoint-initdb.d/
+    volumes_from:
+      - poostgresql_dbdata
+    ports:
+      - '5432:5432'
+  serv:
+    build: ./../../../server
+    env_file:
+      - ./env/common.env
+    volumes:
+      - "./../../../server:/usr/src/app/server"
+    extra_hosts:
+      - "kids_rooms.com:0.0.0.0"
+    ports:
+      - "8078:3000"
+    depends_on:
+      - pg

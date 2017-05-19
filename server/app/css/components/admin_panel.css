@@ -1,0 +1,7 @@
+@import '../settings';
+@import '../common/typography';
+@import '../common/layout';
+
+.wrapper {
+  @apply --column is-10;
+}

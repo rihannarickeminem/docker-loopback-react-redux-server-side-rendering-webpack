@@ -1,0 +1,47 @@
+@import '../common/colors';
+@import '../common/typography';
+@import '../common/layout';
+
+.navigation {
+  padding: 0 28px;
+}
+
+.section {
+  @apply --section;
+  background-color: var(--colorWhite);
+}
+
+.rightopbar {
+  height: 70px;
+}
+
+.column {
+  @apply --column;
+  color: white;
+  padding: 0;
+}
+
+.is-9 {
+  @apply --is-9;
+}
+
+.box {
+  color: red;
+  border-radius: 0;
+  & .green {
+    height: 150px;
+    color: var(--colorWhite);
+    background-color: #abcd52;
+    padding: 20px;
+  }
+  & .white {
+    background-color: var(--colorWhite);
+    padding: 20px;
+  }
+  & .raised {
+    background-color: var(--colorWhite);
+    padding: 20px;
+    margin-top: -70px;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+  }
+}

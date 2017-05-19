@@ -1,0 +1,60 @@
+@import 'settings';
+@import 'common/layout';
+@import 'common/typography';
+@import 'common/colors';
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+
+* { box-sizing: border-box; }
+
+html {
+  height: 100%;
+}
+
+.section {
+  @apply --section;
+  background-color: #65517a;
+}
+
+.rghtcontent {
+  background-color: var(--colorWhite);
+}
+
+.container {
+  @apply --container;
+}
+
+.columns {
+  @apply --columns;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  font-family: var(--fontMontserrat);
+  background-color: #65517a;
+}
+
+.app {
+  @apply --box;
+  min-height: 100%;
+  font-weight: normal;
+  font-smoothing: antialiased;
+}
+
+/* Add your global styles below... */
+
+/* ex:
+
+:global {
+  .sdfs {
+    border-width: 100px;
+    background-color: purple !important;
+    color: green;
+  }
+}
+:global {
+  & .red { color: red; }
+  & .blue { color: blue; }
+}
+*/

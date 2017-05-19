@@ -1,0 +1,12 @@
+version: '2'
+services:
+  poostgresql_dbdata:
+    extends:
+      file: ./../common/docker-compose.yml
+      service: poostgresql_dbdata
+  pg:
+    image: postgres
+    volumes:
+      - ./../../../provision/postgresql/:/docker-entrypoint-initdb.d/
+    ports:
+      - '5432:5432'

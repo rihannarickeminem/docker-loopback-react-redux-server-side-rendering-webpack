@@ -1,0 +1,38 @@
+:root {
+  --box {
+    padding: 8px 24px;
+  }
+  --flexNotMoreThan200 {
+    flex: 0 1 200px;
+  }
+  --section {
+    composes: section from 'bulma/css/bulma.css';
+  }
+  --container {
+    composes: container from 'bulma/css/bulma.css';
+  }
+  --menu {
+    composes: menu from 'bulma/css/bulma.css';
+  }
+  --media-left {
+    composes: media-left from 'bulma/css/bulma.css';
+  }
+  --media {
+    composes: media from 'bulma/css/bulma.css';
+  }
+  --menu-list {
+    composes: menu-list from 'bulma/css/bulma.css';
+  }
+  --columns {
+    composes: columns from 'bulma/css/bulma.css';
+  }
+  --column {
+    composes: column from 'bulma/css/bulma.css';
+  }
+  --is-3 {
+    composes: is-3 from 'bulma/css/bulma.css';
+  }
+  --is-9 {
+    composes: is-9 from 'bulma/css/bulma.css';
+  }
+}
